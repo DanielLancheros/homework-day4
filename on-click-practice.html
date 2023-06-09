@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title id="toptitle">On Click Practice</title>
+</head>
+<body>
+    <h1 id="title">Welcome to My Page!</h1>
+
+    <h2>Subheading 1</h2>
+    <p>This is the first subheading with some text.</p>
+
+    <h2>Subheading 2</h2>
+    <p>This is the second subheading with some text.</p>
+
+    <button onclick="changeTopTitle()">Change Top Title</button>
+    <button onclick="changeTitle()">Change Title</button>
+    <button onclick="addNewElement()">Add New Element</button>
+    <button onclick="removeSubheading()">Remove Subheading</button>
+
+    <script>
+        function changeTopTitle() {
+            var newTopTitle = document.getElementByID("toptitle");
+            newTopTitle.innerText = "New title after click";
+        }
+
+        function changeTitle() {
+            var newTitle = document.getElementById("title");newTitle.innerText = "You've changed my title!";
+        }
+
+        function addNewElement() {
+            var newHeading = document.createElement("h2");
+            newHeading.innerText = "New Subheading";
+            var newParagraph = document.createElement("p");
+            newParagraph.innerText = "This is a new subheading with some text.";
+
+            document.body.append(newHeading);
+            document.body.append(newParagraph);
+        }
+
+        function removeSubheading() {
+            var subheadingToRemove = document.getElementsByTagName("h2")[0];
+            var paragraphToRemove = document.getElementsByTagName("p")[0];
+            
+            if (subheadingToRemove && paragraphToRemove) {
+                subheadingToRemove.remove();
+                paragraphToRemove.remove();
+            }
+        }
+    </script>
+</body>
+</html>
